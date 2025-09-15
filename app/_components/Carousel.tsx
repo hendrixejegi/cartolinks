@@ -14,14 +14,7 @@ import {
 } from "./EmblaCarouselControls/EmblaCarouselDotButton";
 import { cn } from "@/lib/utils";
 
-interface Item {
-  callout: string;
-  title: string;
-  url: string;
-  alt: string;
-}
-
-const carouselItems: Item[] = [
+const carouselItems = [
   {
     callout: "HUMANITY",
     title: "Reach People 2025",
@@ -41,6 +34,8 @@ const carouselItems: Item[] = [
     alt: "Pleased calm nature lover meditating at the top mountain range",
   },
 ];
+
+type Item = (typeof carouselItems)[0];
 
 const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -96,12 +91,12 @@ export default Carousel;
 
 function Item({ callout, title, url, alt }: Item) {
   return (
-    <div className="embla__slide relative w-fit shrink-0 basis-[720px] overflow-hidden rounded-2xl">
+    <div className="embla__slide relative w-fit shrink-0 basis-4xl overflow-hidden rounded-2xl">
       <Image
         src={url}
         className="aspect-video object-cover"
-        width={720}
-        height={405}
+        width={896}
+        height={504}
         alt={alt}
       />
       <div
