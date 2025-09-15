@@ -126,9 +126,9 @@ function ThemeToggle() {
     <button
       className="flex cursor-pointer items-center gap-2 rounded-lg bg-[#f6f6f6] px-2.5 py-1.5"
       onClick={() => setIsDarkMode(!isDarkMode)}
-      aria-label={`Toggle ${isDarkMode ? "light" : "dark"} theme`}
+      aria-label={`Set ${isDarkMode ? "light" : "dark"} theme`}
     >
-      {!isDarkMode ? (
+      {isDarkMode ? (
         <IoMdSunny className="size-5" aria-hidden="true" />
       ) : (
         <MdDarkMode className="size-5" aria-hidden="true" />
